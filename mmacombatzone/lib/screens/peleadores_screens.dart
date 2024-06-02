@@ -8,6 +8,7 @@ class PeleadoresScreen extends StatelessWidget {
     return  Scaffold(
       appBar: AppBar(
         title: const Text('Peleadores'),
+        centerTitle: true,
       ),
     );
   }

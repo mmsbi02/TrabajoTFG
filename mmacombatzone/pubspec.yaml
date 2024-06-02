@@ -38,6 +38,7 @@ dependencies:
   card_swiper: ^3.0.1
   http: ^1.2.1
   provider: ^6.1.2
+  build_runner: 2.4.9
 
 dev_dependencies:
   flutter_test:

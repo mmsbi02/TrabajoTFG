@@ -10,7 +10,7 @@ class CardNews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Card(
+    return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
         borderRadius:BorderRadius.circular(30), 
@@ -29,7 +29,7 @@ class CardNews extends StatelessWidget {
             subtitle: Text('fshsghdjgdyhjdyhjdyhjy'),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 9),
+            padding: EdgeInsets.only(right: 9), 
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
