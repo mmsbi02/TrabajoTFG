@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:mmacombatzone/widgets/card_news.dart';
-import 'package:mmacombatzone/widgets/custom_navigationbar.dart';
+import 'package:mmacombatzone/widgets/menu_drawer.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -19,6 +19,7 @@ class HomeScreen extends StatelessWidget {
           )],
 
       ),
+      drawer: MenuDrawer(),
       body:   SingleChildScrollView(
         child:  Column(
         children: [

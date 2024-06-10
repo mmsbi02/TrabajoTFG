@@ -1,45 +1,44 @@
-
-
 import 'dart:convert';
 
-FightResponse fightResponseFromMap(String str) => FightResponse.fromMap(json.decode(str));
+FightResponse fightResponseFromMap(String str) =>
+    FightResponse.fromMap(json.decode(str));
 
 String fightResponseToMap(FightResponse data) => json.encode(data.toMap());
 
 class FightResponse {
-    int fightId;
-    int order;
-    String status;
-    String weightClass;
-    String cardSegment;
-    String referee;
-    int rounds;
-    int resultClock;
-    int resultRound;
-    String resultType;
-    dynamic winnerId;
-    bool active;
-    List<FightStat> fightStats;
-    List<Fighter> fighters;
+  int fightId;
+  int order;
+  String status;
+  String weightClass;
+  String cardSegment;
+  String referee;
+  int rounds;
+  int resultClock;
+  int resultRound;
+  String resultType;
+  dynamic winnerId;
+  bool active;
+  List<FightStat> fightStats;
+  List<Fighter> fighters;
 
-    FightResponse({
-        required this.fightId,
-        required this.order,
-        required this.status,
-        required this.weightClass,
-        required this.cardSegment,
-        required this.referee,
-        required this.rounds,
-        required this.resultClock,
-        required this.resultRound,
-        required this.resultType,
-        required this.winnerId,
-        required this.active,
-        required this.fightStats,
-        required this.fighters,
-    });
+  FightResponse({
+    required this.fightId,
+    required this.order,
+    required this.status,
+    required this.weightClass,
+    required this.cardSegment,
+    required this.referee,
+    required this.rounds,
+    required this.resultClock,
+    required this.resultRound,
+    required this.resultType,
+    required this.winnerId,
+    required this.active,
+    required this.fightStats,
+    required this.fighters,
+  });
 
-    factory FightResponse.fromMap(Map<String, dynamic> json) => FightResponse(
+  factory FightResponse.fromMap(Map<String, dynamic> json) => FightResponse(
         fightId: json["FightId"],
         order: json["Order"],
         status: json["Status"],
@@ -52,11 +51,13 @@ class FightResponse {
         resultType: json["ResultType"],
         winnerId: json["WinnerId"],
         active: json["Active"],
-        fightStats: List<FightStat>.from(json["FightStats"].map((x) => FightStat.fromMap(x))),
-        fighters: List<Fighter>.from(json["Fighters"].map((x) => Fighter.fromMap(x))),
-    );
+        fightStats: List<FightStat>.from(
+            json["FightStats"].map((x) => FightStat.fromMap(x))),
+        fighters:
+            List<Fighter>.from(json["Fighters"].map((x) => Fighter.fromMap(x))),
+      );
 
-    Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toMap() => {
         "FightId": fightId,
         "Order": order,
         "Status": status,
@@ -71,67 +72,67 @@ class FightResponse {
         "Active": active,
         "FightStats": List<dynamic>.from(fightStats.map((x) => x.toMap())),
         "Fighters": List<dynamic>.from(fighters.map((x) => x.toMap())),
-    };
+      };
 }
 
 class FightStat {
-    int fighterId;
-    String firstName;
-    String lastName;
-    bool winner;
-    int fantasyPoints;
-    int fantasyPointsDraftKings;
-    int knockdowns;
-    int totalStrikesAttempted;
-    int totalStrikesLanded;
-    int sigStrikesAttempted;
-    int sigStrikesLanded;
-    int takedownsAttempted;
-    int takedownsLanded;
-    int takedownsSlams;
-    int takedownAccuracy;
-    int advances;
-    int reversals;
-    int submissions;
-    int slamRate;
-    int timeInControl;
-    bool firstRoundWin;
-    bool secondRoundWin;
-    bool thirdRoundWin;
-    bool fourthRoundWin;
-    bool fifthRoundWin;
-    bool decisionWin;
+  int fighterId;
+  String firstName;
+  String lastName;
+  bool winner;
+  int fantasyPoints;
+  int fantasyPointsDraftKings;
+  int knockdowns;
+  int totalStrikesAttempted;
+  int totalStrikesLanded;
+  int sigStrikesAttempted;
+  int sigStrikesLanded;
+  int takedownsAttempted;
+  int takedownsLanded;
+  int takedownsSlams;
+  int takedownAccuracy;
+  int advances;
+  int reversals;
+  int submissions;
+  int slamRate;
+  int timeInControl;
+  bool firstRoundWin;
+  bool secondRoundWin;
+  bool thirdRoundWin;
+  bool fourthRoundWin;
+  bool fifthRoundWin;
+  bool decisionWin;
 
-    FightStat({
-        required this.fighterId,
-        required this.firstName,
-        required this.lastName,
-        required this.winner,
-        required this.fantasyPoints,
-        required this.fantasyPointsDraftKings,
-        required this.knockdowns,
-        required this.totalStrikesAttempted,
-        required this.totalStrikesLanded,
-        required this.sigStrikesAttempted,
-        required this.sigStrikesLanded,
-        required this.takedownsAttempted,
-        required this.takedownsLanded,
-        required this.takedownsSlams,
-        required this.takedownAccuracy,
-        required this.advances,
-        required this.reversals,
-        required this.submissions,
-        required this.slamRate,
-        required this.timeInControl,
-        required this.firstRoundWin,
-        required this.secondRoundWin,
-        required this.thirdRoundWin,
-        required this.fourthRoundWin,
-        required this.fifthRoundWin,
-        required this.decisionWin,
-    });
+  FightStat({
+    required this.fighterId,
+    required this.firstName,
+    required this.lastName,
+    required this.winner,
+    required this.fantasyPoints,
+    required this.fantasyPointsDraftKings,
+    required this.knockdowns,
+    required this.totalStrikesAttempted,
+    required this.totalStrikesLanded,
+    required this.sigStrikesAttempted,
+    required this.sigStrikesLanded,
+    required this.takedownsAttempted,
+    required this.takedownsLanded,
+    required this.takedownsSlams,
+    required this.takedownAccuracy,
+    required this.advances,
+    required this.reversals,
+    required this.submissions,
+    required this.slamRate,
+    required this.timeInControl,
+    required this.firstRoundWin,
+    required this.secondRoundWin,
+    required this.thirdRoundWin,
+    required this.fourthRoundWin,
+    required this.fifthRoundWin,
+    required this.decisionWin,
+  });
 
-    factory FightStat.fromMap(Map<String, dynamic> json) => FightStat(
+  factory FightStat.fromMap(Map<String, dynamic> json) => FightStat(
         fighterId: json["FighterId"],
         firstName: json["FirstName"],
         lastName: json["LastName"],
@@ -158,9 +159,9 @@ class FightStat {
         fourthRoundWin: json["FourthRoundWin"],
         fifthRoundWin: json["FifthRoundWin"],
         decisionWin: json["DecisionWin"],
-    );
+      );
 
-    Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toMap() => {
         "FighterId": fighterId,
         "FirstName": firstName,
         "LastName": lastName,
@@ -187,35 +188,35 @@ class FightStat {
         "FourthRoundWin": fourthRoundWin,
         "FifthRoundWin": fifthRoundWin,
         "DecisionWin": decisionWin,
-    };
+      };
 }
 
 class Fighter {
-    int fighterId;
-    String firstName;
-    String lastName;
-    int preFightWins;
-    int preFightLosses;
-    int preFightDraws;
-    int preFightNoContests;
-    bool winner;
-    dynamic moneyline;
-    bool active;
+  int fighterId;
+  String firstName;
+  String lastName;
+  int preFightWins;
+  int preFightLosses;
+  int preFightDraws;
+  int preFightNoContests;
+  bool winner;
+  dynamic moneyline;
+  bool active;
 
-    Fighter({
-        required this.fighterId,
-        required this.firstName,
-        required this.lastName,
-        required this.preFightWins,
-        required this.preFightLosses,
-        required this.preFightDraws,
-        required this.preFightNoContests,
-        required this.winner,
-        required this.moneyline,
-        required this.active,
-    });
+  Fighter({
+    required this.fighterId,
+    required this.firstName,
+    required this.lastName,
+    required this.preFightWins,
+    required this.preFightLosses,
+    required this.preFightDraws,
+    required this.preFightNoContests,
+    required this.winner,
+    required this.moneyline,
+    required this.active,
+  });
 
-    factory Fighter.fromMap(Map<String, dynamic> json) => Fighter(
+  factory Fighter.fromMap(Map<String, dynamic> json) => Fighter(
         fighterId: json["FighterId"],
         firstName: json["FirstName"],
         lastName: json["LastName"],
@@ -226,9 +227,9 @@ class Fighter {
         winner: json["Winner"],
         moneyline: json["Moneyline"],
         active: json["Active"],
-    );
+      );
 
-    Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toMap() => {
         "FighterId": fighterId,
         "FirstName": firstName,
         "LastName": lastName,
@@ -239,5 +240,5 @@ class Fighter {
         "Winner": winner,
         "Moneyline": moneyline,
         "Active": active,
-    };
+      };
 }

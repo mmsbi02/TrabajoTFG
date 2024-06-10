@@ -1,15 +1,11 @@
 // To parse this JSON data, do
 //
 //     final fighterResponse = fighterResponseFromMap(jsonString);
-
 import 'dart:convert';
-
-FighterResponse fighterResponseFromMap(String str) => FighterResponse.fromMap(json.decode(str));
-
 String fighterResponseToMap(FighterResponse data) => json.encode(data.toMap());
 
 class FighterResponse {
-    int fighterId;
+    List<FighterResponse> fighterId;
     String firstName;
     String lastName;
     String nickname;
@@ -30,7 +26,6 @@ class FighterResponse {
     int titleLosses;
     int titleDraws;
     CareerStats careerStats;
-
     FighterResponse({
         required this.fighterId,
         required this.firstName,
@@ -54,7 +49,7 @@ class FighterResponse {
         required this.titleDraws,
         required this.careerStats,
     });
-
+     factory FighterResponse.fromJson(String str) => FighterResponse.fromMap(json.decode(str));
     factory FighterResponse.fromMap(Map<String, dynamic> json) => FighterResponse(
         fighterId: json["FighterId"],
         firstName: json["FirstName"],

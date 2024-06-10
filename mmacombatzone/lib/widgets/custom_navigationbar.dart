@@ -48,12 +48,13 @@ int _selectedIndex = 0;
        items: const <BottomNavigationBarItem>[
          BottomNavigationBarItem(
            icon: Icon(Icons.newspaper),
-           label: 'Noticias'
+           label: 'Noticias',
           
          ),
          BottomNavigationBarItem(
            icon: Icon(Icons.checklist_rtl),
            label: 'Resultados',
+           
           
          ),
          BottomNavigationBarItem(
@@ -62,7 +63,7 @@ int _selectedIndex = 0;
          ),
          BottomNavigationBarItem(
            icon: Icon(Icons.face_5_outlined),
-           label: 'Próximos'
+           label: 'Favoritos'
          ),
        ],
 
